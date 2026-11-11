@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Utkarsh Pandey — IIM Bangalore student exploring business, technology, leadership and strategy.">
+<title>Utkarsh Pandey | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#f3f1e9;
+  --paper:#faf9f4;
+  --ink:#172a24;
+  --muted:#68766e;
+  --green:#174b3c;
+  --lime:#c8e879;
+  --line:#d8ded4;
+  --soft:#e9ede5;
+}
+body.dark {
+  --bg:#111b17;
+  --paper:#18251f;
+  --ink:#eef1e9;
+  --muted:#aab6ad;
+  --green:#85c9a8;
+  --lime:#d1ee8d;
+  --line:#34443a;
+  --soft:#24352c;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  background:var(--bg);color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  transition:background .3s,color .3s;
+  line-height:1.7;
+}
+a {color:inherit;text-decoration:none}
+button {font:inherit;cursor:pointer}
+.container {width:min(1160px,89%);margin:auto}
+.mono {font-family:"DM Mono",monospace}
+.serif {font-family:"Playfair Display",serif}
+.muted {color:var(--muted)}
+.eyebrow {
+  font:11px "DM Mono",monospace;
+  text-transform:uppercase;letter-spacing:2px;
+  color:var(--green);
+}
+.section {padding:105px 0}
+.section-head {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:35px;align-items:end;margin-bottom:48px;
+}
+.section-head h2 {
+  font:600 clamp(36px,5vw,58px)/1.12 "Playfair Display",serif;
+  letter-spacing:-1px;margin-top:12px;
+}
+.section-head p {max-width:420px;color:var(--muted);font-size:14px}
+.rule {height:1px;background:var(--line)}
+
+/* NAVIGATION */
+header {
+  position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.nav {
+  min-height:76px;display:flex;
+  align-items:center;justify-content:space-between;
+}
+.brand {font-size:19px;font-weight:700;letter-spacing:-1px}
+.brand span {color:var(--green)}
+.navlinks {display:flex;align-items:center;gap:27px}
+.navlinks a {
+  font-size:11px;color:var(--muted);font-weight:600;
+  transition:.2s;
+}
+.navlinks a:hover {color:var(--green)}
+.navright {display:flex;gap:10px;align-items:center}
+.iconbtn,.menubtn {
+  width:39px;height:39px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink);
+  border-radius:50%;
+}
+.menubtn {display:none}
+.navlinks a:focus-visible,button:focus-visible {
+  outline:2px solid var(--green);outline-offset:4px;
+}
+
+/* HERO */
+.hero {padding:85px 0 75px}
+.hero-grid {
+  display:grid;grid-template-columns:1.12fr .88fr;
+  gap:70px;align-items:center;
+}
+.hero-label {
+  display:flex;align-items:center;gap:10px;
+  font:11px "DM Mono",monospace;
+  letter-spacing:1px;color:var(--green);
+  margin-bottom:27px;
+}
+.hero-label:before {
+  content:"";width:28px;height:1px;background:var(--green);
+}
+.hero h1 {
+  font:600 clamp(55px,8vw,98px)/.99 "Playfair Display",serif;
+  letter-spacing:-3px;
+}
+.hero h1 span {color:var(--green);font-style:italic}
+.hero-description {
+  color:var(--muted);font-size:15px;
+  max-width:530px;margin:28px 0;
+}
+.hero-actions {display:flex;flex-wrap:wrap;gap:12px}
+.button {
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 21px;border:1px solid var(--green);
+  background:var(--green);color:#fff;
+  font-size:11px;font-weight:700;
+  letter-spacing:.3px;transition:.2s;
+}
+.button:hover {transform:translateY(-3px)}
+.button.secondary {background:transparent;color:var(--green)}
+body.dark .button {color:#10241b}
+body.dark .button.secondary {color:var(--green)}
+.hero-foot {
+  display:flex;gap:30px;flex-wrap:wrap;
+  margin-top:45px;padding-top:20px;border-top:1px solid var(--line);
+}
+.hero-foot div {font-size:10px;color:var(--muted)}
+.hero-foot strong {
+  display:block;color:var(--ink);font-size:12px;
+  font-weight:700;margin-bottom:2px;
+}
+.portrait-wrap {position:relative;max-width:420px;margin-left:auto}
+.portrait {
+  display:block;width:100%;aspect-ratio:4/5;
+  object-fit:cover;object-position:center 20%;
+  filter:saturate(.83);
+}
+.portrait-caption {
+  display:flex;justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding:13px 0;font:10px "DM Mono",monospace;
+  color:var(--muted);
+}
+
+/* INTRO STRIP */
+.intro-strip {
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:24px 0;
+}
+.strip-inner {
+  display:flex;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.strip-item {font:10px "DM Mono",monospace;color:var(--muted)}
+.strip-item strong {color:var(--green);font-weight:500}
+
+/* ABOUT */
+.about-grid {display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.about-aside h3 {
+  font:500 29px/1.3 "Playfair Display",serif;
+  max-width:300px;
+}
+.about-copy p {font-size:14px;color:var(--muted);margin-bottom:17px}
+.about-quote {
+  border-left:3px solid var(--green);
+  padding:12px 20px;margin-top:28px;
+  font:500 18px/1.5 "Playfair Display",serif;
+}
+
+/* EXPERIENCE */
+.experience {background:var(--paper)}
+.experience-row {
+  display:grid;grid-template-columns:180px 1fr;
+  gap:40px;padding:30px 0;
+  border-top:1px solid var(--line);
+}
+.experience-date {font:11px "DM Mono",monospace;color:var(--green)}
+.experience-content h3 {
+  font:600 25px "Playfair Display",serif;
+}
+.experience-org {font-size:12px;color:var(--muted);margin:5px 0 13px}
+.experience-content p {font-size:13px;color:var(--muted);max-width:720px}
+details {margin-top:16px}
+summary {
+  cursor:pointer;list-style:none;color:var(--green);
+  font-size:11px;font-weight:700;
+}
+summary::-webkit-details-marker {display:none}
+summary:after {content:"  +"}
+details[open] summary:after {content:"  −"}
+.details-content {padding:13px 0;color:var(--muted);font-size:12px}
+.details-content ul {padding-left:18px}
+.details-content li {margin:6px 0}
+
+/* EDUCATION */
+.education-list {border-top:1px solid var(--line)}
+.edu-row {
+  display:grid;grid-template-columns:150px 1fr auto;
+  gap:25px;align-items:center;
+  padding:25px 0;border-bottom:1px solid var(--line);
+}
+.edu-type {font:10px "DM Mono",monospace;color:var(--green)}
+.edu-row h3 {font-size:16px;font-weight:700}
+.edu-row p {font-size:12px;color:var(--muted)}
+.edu-year {font:11px "DM Mono",monospace;color:var(--muted)}
+
+/* PROJECTS */
+.projects {background:var(--green);color:#f5f4ed}
+.projects .eyebrow {color:var(--lime)}
+.projects .section-head p {color:#c1d0c5}
+.projects .section-head h2 {color:#f5f4ed}
+.project-filter {display:flex;gap:8px;flex-wrap:wrap;margin-bottom:27px}
+.filter {
+  background:transparent;border:1px solid #668276;
+  color:#e4eee5;padding:9px 15px;font-size:10px;
+}
+.filter.active {background:var(--lime);border-color:var(--lime);color:#193a2c}
+.project-list {display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#668276}
+.project {
+  background:var(--green);padding:30px;
+  min-height:220px;transition:background .2s;
+}
+.project:hover {background:#205b49}
+.project.hide {display:none}
+.project-no {font:10px "DM Mono",monospace;color:var(--lime)}
+.project h3 {font:500 25px "Playfair Display",serif;margin:20px 0 10px}
+.project p {font-size:12px;color:#d0ded4;max-width:440px}
+.project-tags {display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.project-tags span {font:9px "DM Mono",monospace;color:var(--lime)}
+
+/* ACHIEVEMENTS */
+.achievement-row {
+  display:grid;grid-template-columns:55px 1fr auto;
+  align-items:center;gap:20px;
+  padding:21px 0;border-bottom:1px solid var(--line);
+}
+.achievement-no {font:12px "DM Mono",monospace;color:var(--green)}
+.achievement-row h3 {font-size:13px}
+.achievement-row p {font-size:11px;color:var(--muted)}
+.achievement-row time {font:10px "DM Mono",monospace;color:var(--muted)}
+
+/* INTERESTS */
+.interest-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:35px}
+.interest h3 {
+  font:500 22px "Playfair Display",serif;
+  margin:15px 0 8px;
+}
+.interest p {font-size:12px;color:var(--muted)}
+.interest-no {font:11px "DM Mono",monospace;color:var(--green)}
+
+/* CONTACT */
+.contact {background:var(--paper)}
+.contact-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+.contact h2 {
+  font:600 clamp(42px,6vw,68px)/1.1 "Playfair Display",serif;
+}
+.contact h2 em {color:var(--green)}
+.contact-copy {font-size:13px;color:var(--muted);margin-top:20px;max-width:420px}
+.contact-details {border-top:1px solid var(--line)}
+.contact-item {
+  display:flex;justify-content:space-between;gap:15px;
+  padding:17px 0;border-bottom:1px solid var(--line);
+  font-size:12px;
+}
+.contact-item span:first-child {color:var(--muted)}
+.contact-item a {color:var(--green);font-weight:700}
+.copy-button {
+  background:none;border:0;color:var(--green);
+  font-size:11px;font-weight:700;
+}
+.copy-status {font-size:11px;color:var(--green);margin-top:10px;min-height:20px}
+
+/* FOOTER */
+footer {padding:25px 0}
+.footer-inner {
+  display:flex;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;
+  font:10px "DM Mono",monospace;color:var(--muted);
+}
+.top-button {
+  position:fixed;bottom:20px;right:20px;
+  width:43px;height:43px;border:0;
+  background:var(--lime);color:#18382a;
+  font-size:20px;display:none;z-index:50;
+}
+.top-button.show {display:block}
+
+/* ANIMATIONS */
+.reveal {opacity:0;transform:translateY(20px);transition:.7s ease}
+.reveal.visible {opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important;transition:none!important}
+  .reveal {opacity:1;transform:none}
+}
+
+/* RESPONSIVE */
+@media(max-width:850px) {
+  .navlinks {
+    display:none;position:absolute;top:76px;left:0;right:0;
+    background:var(--paper);padding:25px 6%;
+    border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;
+  }
+  .navlinks.open {display:flex}
+  .menubtn {display:block}
+  .hero-grid {grid-template-columns:1fr;gap:45px}
+  .portrait-wrap {margin:0 auto;max-width:440px}
+  .about-grid {grid-template-columns:1fr;gap:25px}
+  .contact-grid {grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:600px) {
+  .section {padding:72px 0}
+  .hero {padding:55px 0}
+  .hero h1 {letter-spacing:-2px}
+  .section-head {grid-template-columns:1fr;gap:15px}
+  .experience-row {grid-template-columns:1fr;gap:10px}
+  .edu-row {grid-template-columns:1fr;gap:5px}
+  .project-list {grid-template-columns:1fr}
+  .interest-grid {grid-template-columns:1fr;gap:25px}
+  .achievement-row {grid-template-columns:35px 1fr;gap:10px}
+  .achievement-row time {grid-column:2}
+  .hero-foot {gap:15px}
+}
+@media print {
+  header,.hero-actions,.project-filter,.top-button,footer {display:none!important}
+  body {background:white;color:black}
+  .section {padding:25px 0}
+  .reveal {opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">UTKARSH<span>.</span></a>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="navright">
+      <button class="iconbtn" id="theme" aria-label="Toggle theme">☾</button>
+      <button class="menubtn" id="menu" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="hero-label">PERSONAL PORTFOLIO / 2026</div>
+      <h1>Utkarsh<br><span>Pandey.</span></h1>
+      <p class="hero-description">
+        I am a business student at IIM Bangalore, interested in the
+        intersection of digital business, finance and technology.
+        My experiences in NCC and community initiatives have shaped
+        the way I approach leadership, teamwork and responsibility.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#experience">Explore my journey ↗</a>
+        <a class="button secondary" href="#contact">Connect with me</a>
+      </div>
+      <div class="hero-foot">
+        <div><strong>Lucknow, India</strong>Based in</div>
+        <div><strong>IIM Bangalore</strong>Academic institution</div>
+        <div><strong>Business & Strategy</strong>Areas of interest</div>
+      </div>
+    </div>
+
+    <div class="portrait-wrap reveal">
+      <img class="portrait" src="photo.jpeg" alt="Portrait of Utkarsh Pandey">
+      <div class="portrait-caption">
+        <span>UTKARSH PANDEY</span>
+        <span>STUDENT • EXPLORER</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="intro-strip">
+  <div class="container strip-inner">
+    <div class="strip-item"><strong>01</strong> / DIGITAL BUSINESS</div>
+    <div class="strip-item"><strong>02</strong> / LEADERSHIP</div>
+    <div class="strip-item"><strong>03</strong> / FINANCE & TECHNOLOGY</div>
+    <div class="strip-item"><strong>04</strong> / CONTINUOUS LEARNING</div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">01 — A little about me</p>
+        <h2>A journey shaped by<br>different perspectives.</h2>
+      </div>
+      <p>An introduction to the experiences, interests and values that have influenced my academic and personal journey.</p>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-aside">
+        <p class="eyebrow">THE PERSON BEHIND THE PROFILE</p>
+        <h3>Learning has always been a constant across changing environments.</h3>
+        <div class="about-quote">“I value experiences that challenge the way I think and work.”</div>
+      </div>
+
+      <div class="about-copy">
+        <p>My academic journey has taken me through multiple Army Public Schools before leading me to undergraduate studies in Digital Business and Entrepreneurship at IIM Bangalore.</p>
+        <p>Alongside my studies at IIMB, I am pursuing BBA studies in Fintech and AI at Lovely Professional University. These disciplines have encouraged me to explore how technology and business influence one another.</p>
+        <p>A significant part of my school experience was associated with the National Cadet Corps. As an Under Officer, I took responsibility for coordinating cadets, supporting camp activities and communicating with team members.</p>
+        <p>I am particularly interested in business strategy, finance, emerging technology, entrepreneurship and global affairs. I see my current stage as an opportunity to build strong foundations and learn through meaningful experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section experience" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">02 — Experience</p>
+        <h2>Responsibility beyond<br>the classroom.</h2>
+      </div>
+      <p>Experiences that gave me opportunities to work with people, coordinate activities and contribute to a shared objective.</p>
+    </div>
+
+    <div class="experience-row reveal">
+      <div class="experience-date">2024 — 2025</div>
+      <div class="experience-content">
+        <h3>NCC Under Officer</h3>
+        <div class="experience-org">67 UP Battalion • Army Wing</div>
+        <p>An important leadership responsibility involving cadet coordination, camp participation, drill activities and communication.</p>
+        <details>
+          <summary>View responsibilities and experience</summary>
+          <div class="details-content">
+            <ul>
+              <li>Appointed Under Officer on 26 January 2025 by the Commanding Officer and Associate NCC Officer.</li>
+              <li>Led approximately 30 cadets from Army Public School Meerut Cantt during a 10-day CATC camp at CCS University, Meerut.</li>
+              <li>Helped plan daily activities and adapted plans after listening to cadets' concerns.</li>
+              <li>Gave word of command during drill parade activities.</li>
+              <li>Escorted and guided a Lieutenant General, GOC Northern Command, during Republic Day and Independence Day events at Meerut Cantonment in 2024.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="experience-row reveal">
+      <div class="experience-date">OCT — NOV 2021</div>
+      <div class="experience-content">
+        <h3>Project Connect</h3>
+        <div class="experience-org">Virtual Internship • Community Initiative</div>
+        <p>A collaborative case study focused on stray animal welfare and community-based solutions.</p>
+        <details>
+          <summary>View responsibilities and experience</summary>
+          <div class="details-content">
+            <ul>
+              <li>Worked in a team of four on a stray animal welfare case study.</li>
+              <li>Visited an animal shelter in Patiala housing approximately 50 animals.</li>
+              <li>Assisted in feeding animals and accompanied around 10 injured animals to a doctor.</li>
+              <li>Contributed to developing community-based solutions.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">03 — Education</p>
+        <h2>Academic foundation.</h2>
+      </div>
+      <p>A multidisciplinary academic path connecting business, digital transformation, finance and technology.</p>
+    </div>
+
+    <div class="education-list reveal">
+      <div class="edu-row">
+        <div class="edu-type">UNDERGRADUATE</div>
+        <div><h3>Indian Institute of Management Bangalore</h3><p>BBA in Digital Business and Entrepreneurship</p></div>
+        <div class="edu-year">2026 — 2029*</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-type">UNDERGRADUATE</div>
+        <div><h3>Lovely Professional University</h3><p>BBA in Fintech and AI</p></div>
+        <div class="edu-year">2026 — 2029*</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-type">CLASS XII</div>
+        <div><h3>Army Public School, Meerut Cantt</h3><p>Senior Secondary Education</p></div>
+        <div class="edu-year">2025</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-type">CLASS X</div>
+        <div><h3>Army Public School, Patiala Cantt</h3><p>Secondary Education</p></div>
+        <div class="edu-year">2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">04 — Projects & interests</p>
+        <h2>Areas I have explored.</h2>
+      </div>
+      <p>A selection of practical experiences and areas of academic exploration. Filter the topics to explore different categories.</p>
+    </div>
+
+    <div class="project-filter reveal">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="leadership">Leadership</button>
+      <button class="filter" data-filter="community">Community</button>
+      <button class="filter" data-filter="academic">Academic interests</button>
+    </div>
+
+    <div class="project-list">
+      <article class="project reveal" data-category="leadership">
+        <span class="project-no">CASE 01 / LEADERSHIP</span>
+        <h3>NCC Camp Coordination</h3>
+        <p>Coordinating approximately 30 cadets during a 10-day camp, helping plan daily activities and respond to team concerns.</p>
+        <div class="project-tags"><span>TEAMWORK</span><span>PLANNING</span><span>NCC</span></div>
+      </article>
+      <article class="project reveal" data-category="community">
+        <span class="project-no">CASE 02 / COMMUNITY</span>
+        <h3>Stray Animal Welfare</h3>
+        <p>A team initiative involving an animal shelter visit, assistance to injured animals and community-focused solutions.</p>
+        <div class="project-tags"><span>COMMUNITY</span><span>COLLABORATION</span></div>
+      </article>
+      <article class="project reveal" data-category="academic">
+        <span class="project-no">INTEREST 03 / BUSINESS</span>
+        <h3>Digital Business</h3>
+        <p>Exploring digital business models, entrepreneurship, consumer behaviour and how technology influences markets.</p>
+        <div class="project-tags"><span>BUSINESS</span><span>STRATEGY</span></div>
+      </article>
+      <article class="project reveal" data-category="academic">
+        <span class="project-no">INTEREST 04 / TECHNOLOGY</span>
+        <h3>Fintech & Artificial Intelligence</h3>
+        <p>Exploring how financial technology and artificial intelligence can transform financial services and business.</p>
+        <div class="project-tags"><span>FINTECH</span><span>AI</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">05 — Achievements</p>
+        <h2>Milestones along<br>the way.</h2>
+      </div>
+      <p>Recognition and milestones from school, NCC and extracurricular activities.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="achievement-row">
+        <span class="achievement-no">01</span>
+        <div><h3>NCC 'B' Certificate — Army Wing</h3><p>'A' Grade • 67 UP Battalion, Meerut</p></div>
+        <time>2024–25</time>
+      </div>
+      <div class="achievement-row">
+        <span class="achievement-no">02</span>
+        <div><h3>TES Entry SSB — Screened In</h3><p>21 SSB Bhopal</p></div>
+        <time>2024</time>
+      </div>
+      <div class="achievement-row">
+        <span class="achievement-no">03</span>
+        <div><h3>Inter-NCC Battalion Quiz</h3><p>5th position among participating teams in the UP zone</p></div>
+        <time>2024</time>
+      </div>
+      <div class="achievement-row">
+        <span class="achievement-no">04</span>
+        <div><h3>Western Command Hindi Debate</h3><p>4th overall among 11 Army Public Schools; Best Interjector</p></div>
+        <time>2023</time>
+      </div>
+      <div class="achievement-row">
+        <span class="achievement-no">05</span>
+        <div><h3>NCC 'A' Certificate — Air Wing</h3><p>'A' Grade • 3 Punjab Air Squadron, Patiala</p></div>
+        <time>2022–23</time>
+      </div>
+      <div class="achievement-row">
+        <span class="achievement-no">06</span>
+        <div><h3>McKinsey Forward</h3><p>Learning programme • In progress</p></div>
+        <time>ONGOING</time>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">06 — Beyond academics</p>
+        <h2>What I am curious about.</h2>
+      </div>
+      <p>Interests that influence the subjects I explore and the questions I find worth pursuing.</p>
+    </div>
+
+    <div class="interest-grid reveal">
+      <div class="interest">
+        <span class="interest-no">01 / BUSINESS</span>
+        <h3>Strategy & entrepreneurship</h3>
+        <p>Business models, markets, partnerships and the process of turning ideas into practical outcomes.</p>
+      </div>
+      <div class="interest">
+        <span class="interest-no">02 / FINANCE</span>
+        <h3>Financial systems</h3>
+        <p>Financial technology, financial services and the changing relationship between money and technology.</p>
+      </div>
+      <div class="interest">
+        <span class="interest-no">03 / GLOBAL AFFAIRS</span>
+        <h3>International relations</h3>
+        <p>Diplomacy, international affairs and the role of institutions in an interconnected world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">07 — Contact</p>
+      <h2>Open to ideas.<br><em>Ready to connect.</em></h2>
+      <p class="contact-copy">Whether it is a conversation about business, technology, collaboration or an interesting opportunity, feel free to reach out.</p>
+    </div>
+
+    <div class="contact-details reveal">
+      <div class="contact-item">
+        <span>Email</span>
+        <a href="mailto:utkarsh.pandey26@iimb.ac.in">utkarsh.pandey26@iimb.ac.in</a>
+      </div>
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/utkarsh-pandey-2a1b6b376/" target="_blank" rel="noopener noreferrer">View profile ↗</a>
+      </div>
+      <div class="contact-item">
+        <span>Location</span>
+        <span>India</span>
+      </div>
+      <div class="contact-item">
+        <span>Email action</span>
+        <button class="copy-button" id="copy">Copy email address +</button>
+      </div>
+      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> UTKARSH PANDEY</span>
+    <span>PERSONAL PORTFOLIO / BUILT WITH INTENTION</span>
+    <a href="#home">BACK TO TOP ↑</a>
+  </div>
+</footer>
+
+<button class="top-button" id="top" aria-label="Back to top">↑</button>
+
+<script>
+// THEME
+const themeButton = document.getElementById("theme");
+
+try {
+  if (localStorage.getItem("portfolio-theme") === "dark") {
+    document.body.classList.add("dark");
+    themeButton.textContent = "☀";
+  }
+} catch (error) {}
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const dark = document.body.classList.contains("dark");
+  themeButton.textContent = dark ? "☀" : "☾";
+  try {
+    localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
+  } catch (error) {}
+});
+
+// MOBILE MENU
+const menuButton = document.getElementById("menu");
+const nav = document.getElementById("navlinks");
+
+menuButton.addEventListener("click", () => {
+  nav.classList.toggle("open");
+  menuButton.textContent = nav.classList.contains("open") ? "✕" : "☰";
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton.textContent = "☰";
+  });
+});
+
+// PROJECT FILTER
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+    filters.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+
+    const category = button.dataset.filter;
+    projects.forEach(project => {
+      const visible = category === "all" ||
+        project.dataset.category === category;
+      project.classList.toggle("hide", !visible);
+    });
+  });
+});
+
+// REVEAL ANIMATION
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+// COPY EMAIL
+document.getElementById("copy").addEventListener("click", async () => {
+  const email = "utkarsh.pandey26@iimb.ac.in";
+  const status = document.getElementById("copyStatus");
+
+  try {
+    await navigator.clipboard.writeText(email);
+    status.textContent = "Email address copied.";
+  } catch (error) {
+    status.textContent = "Email: " + email;
+  }
+});
+
+// BACK TO TOP
+const topButton = document.getElementById("top");
+window.addEventListener("scroll", () => {
+  topButton.classList.toggle("show", window.scrollY > 450);
+});
+topButton.addEventListener("click", () => {
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// FOOTER YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
